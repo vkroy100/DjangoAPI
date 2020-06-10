@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<form method="POST">
+	{% csrf_token %}
+	{{ form|linebreaks }}
+	<button type="submit">Submit</button>
+</form>
+</body>
+</html>
