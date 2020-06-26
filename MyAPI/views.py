@@ -69,7 +69,10 @@ def cxcontact(request):
 				p=predict(model,data_inp)
 				print(p)
 				html = "<html><body>It is now %s.</body></html>" % p
-				return HttpResponse(html)
+				form={'ans':p}
+				return render(request,'ans.html',{'form':form})
+
+				
 
 				
 	
