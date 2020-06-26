@@ -68,6 +68,9 @@ def cxcontact(request):
 				model=load_model("/home/ubuntu/DjangoAPI/MyAPI/InsurenceClaim.hdf5")
 				p=predict(model,data_inp)
 				print(p)
+				html = "<html><body>It is now %s.</body></html>" % p
+				return HttpResponse(html)
+
 				
 	
 	form=ApprovalForm()
