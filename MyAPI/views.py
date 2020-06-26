@@ -71,6 +71,9 @@ def cxcontact(request):
 				html = "<html><body>It is now %s.</body></html>" % p
 				form={'ans':p}
 				return render(request,'ans.html',{'form':form})
+		else:
+			form={'ans':p}
+			return render(request,'ans.html',{'form':form})
 
 				
 
