@@ -65,7 +65,7 @@ def cxcontact(request):
 				columns=['age', 'sex', 'bmi', 'children', 'smoker', 'region', 'Alcohol consumer','Diphtheria', 'Polio', 'Measles',
 						 'Hepatitis-B', 'HIV/AIDS', 'Thinness'])
 				
-				model=load_model("/home/vaibhav/Desktop/ecommerce/DjangoAPI/MyAPI/InsurenceClaim.hdf5")
+				model=load_model("InsurenceClaim.hdf5")
 				p=predict(model,data_inp)
 				print(p)
 				
