@@ -66,11 +66,11 @@ def cxcontact(request):
 				data_inp=pd.DataFrame([[age,sex,bmi,children,smoke,region,alcohol,diptheria,polio,measles,hepatitis,hiv,thinness]],
 				columns=['age', 'sex', 'bmi', 'children', 'smoker', 'region', 'Alcohol consumer','Diphtheria', 'Polio', 'Measles',
 						 'Hepatitis-B', 'HIV/AIDS', 'Thinness'])
-				data_new_copy=pd.read_csv("/home/vaibhav/Desktop/ecommerce/DjangoAPI/MyAPI/data/Deloitte_DataSet_Sheet_With_Desaeses.csv");
+				data_new_copy=pd.read_csv("/home/ubuntu/DjangoAPI/MyAPI/Deloitte_DataSet_Sheet_With_Desaeses.csv");
 				label_col_new='lifetime'
 				data_new_copy=data_new_copy.drop([label_col_new], axis = 1) 
 				
-				model_new=load_model("/home/vaibhav/Desktop/ecommerce/DjangoAPI/MyAPI/model/model.hdf5")
+				model_new=load_model("/home/ubuntu/DjangoAPI/MyAPI/model.hdf5")
 				le_new = LabelEncoder()
 
 				data_new_copy['sex'] = le_new.fit_transform(data_new_copy['sex'])
@@ -99,23 +99,6 @@ def cxcontact(request):
 	form=ApprovalForm()
 				
 	return render(request, 'cxform.html', {'form':form})
-
-
-def predict(model,x_testnp):
-	  scaler = MinMaxScaler(feature_range=(0, 1))
-	  # only these 4 columns are scaled
-	  col_names = ['age', 'bmi', 'children']  
-	  features = x_testnp[col_names]
-	  features = scaler.fit_transform(features)
-	  x_testnp[col_names] = features
-	  x_testnp=x_testnp.to_numpy()
-	  x_testnp = np.reshape(x_testnp, (x_testnp.shape[0], 1, x_testnp.shape[1]))  
-	  val=model.predict(x_testnp)  
-	  d=val[-1]
-	  return d*10000
-
-
-
 
 def norm_stats_new(dfs):
   minimum = np.min(dfs)
