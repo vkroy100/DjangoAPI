@@ -19,7 +19,7 @@ class ApprovalForm(forms.Form):
 	lastname=forms.CharField(max_length=15)
 	age=forms.IntegerField()
 	gender=forms.ChoiceField(choices=GENDER_CHOICES)
-	bmi=forms.IntegerField()
+	bmi=forms.FloatField()
 	children=forms.IntegerField()
 	region=forms.ChoiceField( choices=REGION)
 	smoker=forms.ChoiceField(choices=YES_NO_CHOICES)
