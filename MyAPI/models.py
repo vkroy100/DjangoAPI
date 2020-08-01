@@ -19,7 +19,7 @@ class approvals(models.Model):
 	lastname=models.CharField(max_length=15)
 	age=models.IntegerField(default=0)
 	gender=models.CharField(max_length=15, choices=GENDER_CHOICES)
-	bmi=models.IntegerField(default=0)
+	bmi=models.FloatField(default=0)
 	children=models.IntegerField(default=0)
 	region=models.CharField(max_length=15, choices=REGION)
 	smoker=models.CharField(max_length=15,choices=YES_NO_CHOICES)
