@@ -90,7 +90,7 @@ def cxcontact(request):
 				arr_x_predict = np.array(z_score(data_x_predict, stats_new))
 				data_predict=arr_x_predict[-1:]
 				trainX_data_new_prdict=model_new.predict(data_predict)
-				p=float(round(trainX_data_new_prdict[-1][0]*1000))
+				p=float(round(trainX_data_new_prdict[-1][0]*10000))
 				html = "<html><body>It is now %s.</body></html>" % p
 				form={'ans':p}
 				return render(request,'ans.html',{'form':form})
