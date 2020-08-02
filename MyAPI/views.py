@@ -66,7 +66,7 @@ def cxcontact(request):
 				data_inp=pd.DataFrame([[age,sex,bmi,children,smoke,region,alcohol,diptheria,polio,measles,hepatitis,hiv,thinness]],
 				columns=['age', 'sex', 'bmi', 'children', 'smoker', 'region', 'Alcohol consumer','Diphtheria', 'Polio', 'Measles',
 						 'Hepatitis-B', 'HIV/AIDS', 'Thinness'])
-				data_new_copy=pd.read_csv("/home/ubuntu/DjangoAPI/MyAPI/Deloitte_DataSet_Sheet_With_Desaeses.csv");
+				data_new_copy=pd.read_csv("/home/ubuntu/DjangoAPI/MyAPI/deloitte_dataset_sheet_with_diseases.csv");
 				label_col_new='lifetime'
 				data_new_copy=data_new_copy.drop([label_col_new], axis = 1) 
 				
